@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Did you notice this</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+
+<body>
+  <div class="container">
+
+    <div class="jumbotron text-center">
+      <h1>Misson to Mars</h1>
+      <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Scrape New Data!</a></p>
+    </div>
+
+    <!-- Craigslist Listings -->
+    <div class="row" id="craiglist-listings">
+      <div class="col-md-12">
+        <h4 class="heading">Latest Mars News</h4>
+        <h5>{{scrape_solutions["headline"]}}</h5>
+        <p>{{scrape_solutions["paragraph"]}}</p>
+        <h5>Latest Tweets </h5>
+        <p>{{scrape_solutions["tweets"]}}</p>
+        <h4 class="heading">Featured Mars Image</h4>
+        <img src="{{scrape_solutions['images']}}">
+      <div>
+          <table border="1" class="dataframe">
+        {{scrape_solutions["table"]|safe}}
+        </table>
+      </div>
+      <h4>{{scrape_solutions['picture1'][0]}}</h4>
+        <img src="{{scrape_solutions['picture1'][1]}}"width =25%>
+        <h4>{{scrape_solutions['picture2'][0]}}</h4>
+        <img src="{{scrape_solutions['picture2'][1]}}"width =25%>
+        <h4>{{scrape_solutions['picture3'][0]}}</h4>
+        <img src="{{scrape_solutions['picture3'][1]}}"width =25%>
+        <h4>{{scrape_solutions['picture4'][0]}}</h4>
+        <img src="{{scrape_solutions['picture4'][1]}}"width =25%>
+
+      </div>
+    </div>
+
+  </div>
+</body>
+
+</html>
+
